@@ -11,6 +11,8 @@ import { ListadoComponent } from './pages/listado/listado.component';
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { MaterialModule } from '../material/material.module';
 
+import { ImagenPipe } from './pipes/imagen.pipe';
+
 @NgModule({
   declarations: [
     AgregarComponent,
@@ -19,6 +21,7 @@ import { MaterialModule } from '../material/material.module';
     HeroeTarjetaComponent,
     HomeComponent,
     ListadoComponent,
+    ImagenPipe,
   ],
   imports: [
     CommonModule,
