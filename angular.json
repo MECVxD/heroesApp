@@ -72,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "heroesApp:build"
+            "buildTarget": "heroesApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "heroesApp:build:production"
+              "buildTarget": "heroesApp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "heroesApp:build"
+            "buildTarget": "heroesApp:build"
           }
         },
         "test": {
