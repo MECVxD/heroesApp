@@ -6,11 +6,11 @@ import { Heroe, Publisher } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
 
 @Component({
-  selector: 'app-agregar',
-  templateUrl: './agregar.component.html',
+  selector: 'heroes-new-page',
+  templateUrl: './new-page.component.html',
   styles: [],
 })
-export class AgregarComponent implements OnInit {
+export class NewPageComponent implements OnInit {
   public publishers = [
     {
       id: 'DC Comics',

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
+  selector: 'heroes-layout-page',
+  templateUrl: './layout-page.component.html',
   styles: [
     `
       .container {
@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
     `,
   ],
 })
-export class HomeComponent implements OnInit {
+export class LayoutPageComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}

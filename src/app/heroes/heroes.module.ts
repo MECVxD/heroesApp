@@ -3,33 +3,27 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { AgregarComponent } from './pages/agregar/agregar.component';
-import { BuscarComponent } from './pages/buscar/buscar.component';
-import { HeroeComponent } from './pages/heroe/heroe.component';
-import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
-import { HomeComponent } from './pages/home/home.component';
-import { ListadoComponent } from './pages/listado/listado.component';
 import { HeroesRoutingModule } from './heroes-routing.module';
-import { MaterialModule } from '../material/material.module';
+// import { MaterialModule } from '../material/material.module';
 
 import { ImagenPipe } from './pipes/imagen.pipe';
+import { HeroPageComponent } from './pages/hero-page/hero-page.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
+import { ListPageComponent } from './pages/list-page/list-page.component';
 
 @NgModule({
   declarations: [
-    AgregarComponent,
-    BuscarComponent,
-    HeroeComponent,
-    HeroeTarjetaComponent,
-    HomeComponent,
-    ListadoComponent,
-    ImagenPipe,
+    HeroPageComponent,
+    SearchPageComponent,
+    LayoutPageComponent,
+    ListPageComponent,
   ],
   imports: [
     CommonModule,
     FlexLayoutModule,
     FormsModule,
     HeroesRoutingModule,
-    MaterialModule,
   ],
 })
 export class HeroesModule {}

@@ -4,11 +4,11 @@ import { HeroesService } from '../../services/heroes.service';
 import { Heroe } from '../../interfaces/heroes.interface';
 
 @Component({
-  selector: 'app-listado',
-  templateUrl: './listado.component.html',
+  selector: 'heroes-list-page',
+  templateUrl: './list-page.component.html',
   styles: [],
 })
-export class ListadoComponent implements OnInit {
+export class ListPageComponent implements OnInit {
   public heroes: Heroe[] = [];
 
   constructor(private herosesService: HeroesService) {}

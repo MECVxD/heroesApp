@@ -5,11 +5,11 @@ import { Heroe } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
 
 @Component({
-  selector: 'app-buscar',
-  templateUrl: './buscar.component.html',
+  selector: 'heroes-search-page',
+  templateUrl: './search-page.component.html',
   styles: [],
 })
-export class BuscarComponent implements OnInit {
+export class SearchPageComponent implements OnInit {
   public termino: string = '';
   public heroes: Heroe[] = [];
   public heroeSeleccionado: Heroe | undefined;

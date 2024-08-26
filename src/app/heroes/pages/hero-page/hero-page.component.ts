@@ -6,8 +6,8 @@ import { Heroe } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
 
 @Component({
-  selector: 'app-heroe',
-  templateUrl: './heroe.component.html',
+  selector: 'heroes-hero-page',
+  templateUrl: './hero-page.component.html',
   styles: [
     `
       img {
@@ -17,7 +17,7 @@ import { HeroesService } from '../../services/heroes.service';
     `,
   ],
 })
-export class HeroeComponent implements OnInit {
+export class HeroPageComponent implements OnInit {
   public heroe!: Heroe;
 
   constructor(
