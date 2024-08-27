@@ -37,9 +37,9 @@ export class NewPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params
-      .pipe(switchMap(({ id }) => this.heroesService.getHeroePorId(id)))
-      .subscribe((heroe: Heroe) => (this.heroe = heroe));
+    // this.activatedRoute.params
+    //   .pipe(switchMap(({ id }) => this.heroesService.getHeroePorId(id)))
+    //   .subscribe((heroe: Heroe) => (this.heroe = heroe));
   }
 
   public guardar(): void {
@@ -47,15 +47,15 @@ export class NewPageComponent implements OnInit {
       return;
     }
     if (this.heroe.id) {
-      this.heroesService
-        .actualizarHeroe(this.heroe)
-        .subscribe((heroe: Heroe) => {
-          console.log(heroe);
-        });
+      // this.heroesService
+      //   .actualizarHeroe(this.heroe)
+      //   .subscribe((heroe: Heroe) => {
+      //     console.log(heroe);
+      //   });
     } else {
-      this.heroesService.agregarHeroe(this.heroe).subscribe((heroe: Heroe) => {
-        this.router.navigate(['/heroes/editar', heroe.id]);
-      });
+      // this.heroesService.agregarHeroe(this.heroe).subscribe((heroe: Heroe) => {
+      //   this.router.navigate(['/heroes/editar', heroe.id]);
+      // });
     }
   }
 }

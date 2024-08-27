@@ -27,9 +27,9 @@ export class HeroPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params
-      .pipe(switchMap(({ id }) => this.heroesService.getHeroePorId(id)))
-      .subscribe((heroe: Heroe) => (this.heroe = heroe));
+    // this.activatedRoute.params
+    //   .pipe(switchMap(({ id }) => this.heroesService.getHeroePorId(id)))
+    //   .subscribe((heroe: Heroe) => (this.heroe = heroe));
   }
 
   public regresar(): void {

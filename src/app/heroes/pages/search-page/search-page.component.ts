@@ -18,9 +18,9 @@ export class SearchPageComponent implements OnInit {
   ngOnInit(): void {}
 
   public buscando() {
-    this.heroesService
-      .getSugerencias(this.termino.trim())
-      .subscribe((heroes: Heroe[]) => (this.heroes = heroes));
+    // this.heroesService
+    //   .getSugerencias(this.termino.trim())
+    //   .subscribe((heroes: Heroe[]) => (this.heroes = heroes));
   }
 
   // public opcionSeleccionada(event: MatAutocompleteSelectedEvent): void {
