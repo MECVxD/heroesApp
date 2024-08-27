@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { HeroesRoutingModule } from './heroes-routing.module';
-// import { MaterialModule } from '../material/material.module';
+import { MaterialModule } from '../material/material.module';
 
 import { ImagenPipe } from './pipes/imagen.pipe';
 import { HeroPageComponent } from './pages/hero-page/hero-page.component';
@@ -21,7 +20,7 @@ import { ListPageComponent } from './pages/list-page/list-page.component';
   ],
   imports: [
     CommonModule,
-    FlexLayoutModule,
+    MaterialModule,
     FormsModule,
     HeroesRoutingModule,
   ],
