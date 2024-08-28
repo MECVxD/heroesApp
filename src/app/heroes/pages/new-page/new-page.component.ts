@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 
-import { Heroe, Publisher } from '../../interfaces/heroes.interface';
+import { Hero, Publisher } from '../../interfaces/hero.interface';
 import { HeroesService } from '../../services/heroes.service';
 
 @Component({
@@ -21,14 +21,14 @@ export class NewPageComponent implements OnInit {
       desc: 'Marvel - Comics',
     },
   ];
-  public heroe: Heroe = {
-    superhero: '',
-    alter_ego: '',
-    characters: '',
-    first_appearance: '',
-    publisher: Publisher.DCComics,
-    alt_img: '',
-  };
+  // public heroe: Hero = {
+  //   superhero: '',
+  //   alter_ego: '',
+  //   characters: '',
+  //   first_appearance: '',
+  //   publisher: Publisher.DCComics,
+  //   alt_img: '',
+  // };
 
   constructor(
     private heroesService: HeroesService,
@@ -43,19 +43,19 @@ export class NewPageComponent implements OnInit {
   }
 
   public guardar(): void {
-    if (this.heroe.superhero.trim().length === 0) {
-      return;
-    }
-    if (this.heroe.id) {
-      // this.heroesService
-      //   .actualizarHeroe(this.heroe)
-      //   .subscribe((heroe: Heroe) => {
-      //     console.log(heroe);
-      //   });
-    } else {
-      // this.heroesService.agregarHeroe(this.heroe).subscribe((heroe: Heroe) => {
-      //   this.router.navigate(['/heroes/editar', heroe.id]);
-      // });
-    }
+    // if (this.heroe.superhero.trim().length === 0) {
+    //   return;
+    // }
+    // if (this.heroe.id) {
+    //   // this.heroesService
+    //   //   .actualizarHeroe(this.heroe)
+    //   //   .subscribe((heroe: Heroe) => {
+    //   //     console.log(heroe);
+    //   //   });
+    // } else {
+    //   // this.heroesService.agregarHeroe(this.heroe).subscribe((heroe: Heroe) => {
+    //   //   this.router.navigate(['/heroes/editar', heroe.id]);
+    //   // });
+    // }
   }
 }

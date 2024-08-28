@@ -1,5 +1,5 @@
-export interface Heroe {
-  id?: string;
+export interface Hero {
+  id: string;
   superhero: string;
   publisher: Publisher;
   alter_ego: string;

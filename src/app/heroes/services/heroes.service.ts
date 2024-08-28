@@ -1,31 +1,35 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
-import { Heroe } from '../interfaces/heroes.interface';
-import { environment } from '../../../environments/environment';
+import { Hero } from '../interfaces/hero.interface';
+import { environments } from '../../../environments/environments';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HeroesService {
-  // private baseUrl: string = environment.baseUrl;
+  private baseUrl: string = environments.baseUrl;
 
-  // constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-  // public getHeroes(): Observable<Heroe[]> {
-  //   return this.http.get<Heroe[]>(`${this.baseUrl}/heroes`);
-  // }
+  public getHeroes(): Observable<Hero[]> {
+    return this.http.get<Hero[]>(`${this.baseUrl}/heroes`);
+  }
 
-  // public getHeroePorId(id: string): Observable<Heroe> {
-  //   return this.http.get<Heroe>(`${this.baseUrl}/heroes/${id}`);
-  // }
+  public getHeroById(id: string): Observable<Hero | undefined> {
+    return this.http.get<Hero>(`${this.baseUrl}/heroes/${id}`)
+      .pipe(
+        catchError(error => of(undefined))
+      );
+  }
 
-  // public getSugerencias(termino: string): Observable<Heroe[]> {
-  //   return this.http.get<Heroe[]>(
-  //     `${this.baseUrl}/heroes?q=${termino}&_limit=6`
-  //   );
-  // }
+  public getSuggestions(query: string): Observable<Hero[]> {
+    return this.http.get<Hero[]>(
+      `${this.baseUrl}/heroes?q=${query}&_limit=6`
+    );
+  }
 
   // public agregarHeroe(heroe: Heroe): Observable<Heroe> {
   //   return this.http.post<Heroe>(`${this.baseUrl}/heroes`, heroe);
