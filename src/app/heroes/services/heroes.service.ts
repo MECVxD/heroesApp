@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 
 import { Hero } from '../interfaces/hero.interface';
 import { environments } from '../../../environments/environments';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -31,11 +31,20 @@ export class HeroesService {
     );
   }
 
-  // public agregarHeroe(heroe: Heroe): Observable<Heroe> {
-  //   return this.http.post<Heroe>(`${this.baseUrl}/heroes`, heroe);
-  // }
+  public addHero(hero: Hero): Observable<Hero> {
+    return this.http.post<Hero>(`${this.baseUrl}/heroes`, hero);
+  }
 
-  // public actualizarHeroe(heroe: Heroe): Observable<Heroe> {
-  //   return this.http.put<Heroe>(`${this.baseUrl}/heroes/${heroe.id}`, heroe);
-  // }
+  public updateHero(hero: Hero): Observable<Hero> {
+    if (!hero.id) throw Error('Hero id is required');
+    return this.http.patch<Hero>(`${this.baseUrl}/heroes/${ hero.id }`, hero);
+  }
+
+  public deleteHeroById(id: string): Observable<boolean> {
+    return this.http.delete(`${this.baseUrl}/heroes/${ id }`)
+      .pipe(
+        catchError(err => of(false)),
+        map(resp => true)
+      );
+  }
 }

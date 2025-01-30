@@ -8,6 +8,7 @@ import { MaterialModule } from '../material/material.module';
 import { HeroImagePipe } from './pipes/hero-image.pipe';
 
 import { HeroCardComponent } from './components/hero-card/hero-card.component';
+import { HeroConfirmDialogComponent } from './components/hero-confirm-dialog/hero-confirm-dialog.component';
 import { HeroPageComponent } from './pages/hero-page/hero-page.component';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
@@ -17,6 +18,7 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
 @NgModule({
   declarations: [
     HeroCardComponent,
+    HeroConfirmDialogComponent,
     HeroPageComponent,
     LayoutPageComponent,
     ListPageComponent,
