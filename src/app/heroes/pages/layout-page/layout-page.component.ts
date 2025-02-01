@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthService } from 'src/app/auth/services/auth.service';
+import { User } from 'src/app/auth/interfaces/user.interface';
 
 @Component({
   selector: 'heroes-layout-page',
@@ -30,7 +34,19 @@ export class LayoutPageComponent implements OnInit {
     }
   ]
 
-  constructor() {}
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
+  get user(): User|undefined {
+    return this.authService.currentUser;
+  }
 
   ngOnInit(): void {}
+
+  public onLogout(): void {
+    this.authService.logout();
+    this.router.navigate(['/auth/login'])
+  }
 }
